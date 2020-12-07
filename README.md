@@ -2,6 +2,7 @@
 
 ![](https://user-images.githubusercontent.com/74318083/101327940-5bc27b00-38aa-11eb-81fb-1aa85895f9dd.png)
 ### Код формы "Меню":
+
 namespace Best
 {
     public partial class Form1 : Form
@@ -62,6 +63,7 @@ namespace Best
 - При двойном нажатии на строку в таблице, откроется форма с полной информацией о клиенте, где можно ее редактировать;
 - Кнопка "Удалить сотрудника" Позволяет удалить сотрудника из таблицы и БД;
 ### Код формы "Сотрудники":
+
 namespace Best
 {
     public partial class FWorker : Form
