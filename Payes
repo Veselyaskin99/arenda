@@ -1,0 +1,47 @@
+namespace Best
+{
+    public partial class Payes : Form
+    {
+        Context2 db;
+        public Payes()
+        {
+            db = new Context2();
+            db.Contractik.Load();
+            InitializeComponent();
+        }
+
+        private void Payes_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cNTR.Contractik". При необходимости она может быть перемещена или удалена.
+            this.contractikTableAdapter.Fill(this.cNTR.Contractik);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_DemidLR8_Class_ContractContextDataSet1.Pays". При необходимости она может быть перемещена или удалена.
+            this.paysTableAdapter.Fill(this._DemidLR8_Class_ContractContextDataSet1.Pays);
+
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dataGridView1.SelectedRows[0].Index;
+            int id = 0;
+            bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+
+            Contractik contract = db.Contractik.Find(id);
+            ContractFull cf = new ContractFull();
+
+
+            cf.textBox1с.Text = contract.Client;
+            cf.textBox2с.Text = contract.Worker;
+            cf.textBox3с.Text = contract.TS;
+            cf.textBox4с.Text = contract.State_namber;
+            cf.textBox5с.Text = contract.Price.ToString();
+            cf.textBox6с.Text = contract.Date_Start.ToString();
+            cf.textBox7с.Text = contract.Date_End.ToString();
+            cf.button15.Hide();
+            cf.ShowDialog();
+
+            DialogResult result = cf.ShowDialog(this);
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = db.Contractik.Where(x => x.Date_End.Contains(textBox1.Text)).ToList();
+        }
