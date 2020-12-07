@@ -1,0 +1,35 @@
+namespace Best
+{
+    public partial class AddWorker : Form
+    {
+        public AddWorker()
+        {
+            InitializeComponent();
+        }
+
+        private void linkWorker_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FWorker fWorker = new FWorker();
+            this.Close();
+            fWorker.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using(Context context = new Context())
+            {
+                Workers worker = new Workers();
+                worker.Name = textBox1.Text;
+                worker.Phone = textBox3.Text;
+                worker.Position = textBox2.Text;
+                worker.Salary = textBox4.Text;
+                worker.Date = textBox5.Text;
+
+                context.Workers.Add(worker);
+                context.SaveChanges();
+                this.Close();
+                FWorker fWorker = new FWorker();
+                fWorker.ShowDialog();
+
+            }
+        }
