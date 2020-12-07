@@ -1,0 +1,79 @@
+namespace Best
+{
+    public partial class Clients : Form
+    {
+        Model1 db;
+       
+        public Clients()
+        {
+            db = new Model1();
+           
+            db.User.Load();
+            InitializeComponent();
+            
+        }
+        private void Clients_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_DemidLR8_Class_ContractContextDataSet4.User". При необходимости она может быть перемещена или удалена.
+            this.userTableAdapter.Fill(this._DemidLR8_Class_ContractContextDataSet4.User);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "clientik.Clients". При необходимости она может быть перемещена или удалена.
+            this.clientsTableAdapter1.Fill(this.clientik.Clients);
+        }
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dataGridView1.SelectedRows[0].Index;
+            int id = 0;
+            bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+            if (converted == false)
+                return;
+
+            User user = db.User.Find(id);
+            AddClient currentClient = new AddClient();
+
+
+            currentClient.textBox1.Text = user.Name;
+            currentClient.textBox2.Text = user.Phone;
+            currentClient.textBox3.Text = user.Passport;
+            currentClient.textBox4.Text = user.Adress;
+            currentClient.textBox5.Text = user.Date;
+
+            DialogResult result = currentClient.ShowDialog(this);
+
+            user.Name = currentClient.textBox1.Text;
+            user.Phone = currentClient.textBox2.Text;
+            user.Passport = currentClient.textBox3.Text;
+            user.Adress = currentClient.textBox4.Text;
+            user.Date = currentClient.textBox5.Text;
+
+            db.SaveChanges();
+            dataGridView1.Refresh();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int index = dataGridView1.SelectedRows[0].Index;
+            int id = 0;
+            bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+            if (converted == false)
+                return;
+            User user = db.User.Find(id);
+            AddClient currentClient = new AddClient();
+            currentClient.textBox1.Text = user.Name;
+            currentClient.textBox2.Text = user.Phone;
+            currentClient.textBox3.Text = user.Passport;
+            currentClient.textBox4.Text = user.Adress;
+            currentClient.textBox5.Text = user.Date;
+            DialogResult result = currentClient.ShowDialog(this);
+            user.Name = currentClient.textBox1.Text;
+            user.Phone = currentClient.textBox2.Text;
+            user.Passport = currentClient.textBox3.Text;
+            user.Adress = currentClient.textBox4.Text;
+            user.Date = currentClient.textBox5.Text;
+            db.SaveChanges();
+            dataGridView1.Refresh();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddClient ad = new AddClient();
+            ad.dataGridView1.Hide();
+            ad.ShowDialog();
+        }
