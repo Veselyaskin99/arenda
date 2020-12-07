@@ -64,4 +64,37 @@
 
 
 [Код формы "Текущий клиент"](https://github.com/Veselyaskin99/arenda/blob/main/Clients)
-#
+# Форма "Договора"
+![](https://user-images.githubusercontent.com/74318083/101341410-02634780-38bc-11eb-9016-a9fe006fb66e.png)
+### Функционал:
+- В textbox можно ввести дату и в таблице найдется нужный договор;
+- Кнопка "Добавить контракт"(Отображается форма добавления договора);
+- При двойном нажатии на строку в таблице, откроется форма с полной информацией о договоре;
+## Поиск договора
+![](https://user-images.githubusercontent.com/74318083/101341424-08592880-38bc-11eb-80ff-f29e10ade875.png)
+
+
+[Код формы "Сотрудники"](https://github.com/Veselyaskin99/arenda/blob/main/Contracts)
+[Код формы "Добавить сотрудника"](https://github.com/Veselyaskin99/arenda/blob/main/Addclient)
+# Форма "Текущий договор"
+![](https://user-images.githubusercontent.com/74318083/101341421-05f6ce80-38bc-11eb-96f0-15b65804c431.png)
+### Функционал:
+- Отображается информация о договоре
+
+
+
+[Код формы "Текущий договор"](https://github.com/Veselyaskin99/arenda/blob/main/CurrenContract)
+# Форма "Добавить договор"
+![](https://user-images.githubusercontent.com/74318083/101341474-1a3acb80-38bc-11eb-97ab-4ffad808524c.png)
+### Функционал:
+-При нажатии на кнопку "Добавить" добавляет новый договор в БД.
+# Форма "Платежи"
+![](https://user-images.githubusercontent.com/74318083/101344128-f8434800-38bf-11eb-808d-3d6423cb5529.png)
+### Функционал:
+- В textbox можно ввести дату и в таблице найдется нужные платежи;
+- При двойном нажатии на строку в таблице, откроется форма с полной информацией о договоре;
+## Поиск платежа
+![](https://user-images.githubusercontent.com/74318083/101344132-fb3e3880-38bf-11eb-9810-15fe36aba6e6.png)
+
+
+[Код формы "Платежи"](https://github.com/Veselyaskin99/arenda/blob/main/Payes)
