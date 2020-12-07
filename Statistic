@@ -1,0 +1,125 @@
+namespace Best
+{
+    public partial class Statistic : Form
+    {
+        public Statistic()
+        {
+            InitializeComponent();
+        }
+        Context2 db;
+
+        private void Statistic_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cNTR.Contractik". При необходимости она может быть перемещена или удалена.
+            this.contractikTableAdapter.Fill(this.cNTR.Contractik);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_DemidLR8_Class_ContractContextDataSet1.Workers". При необходимости она может быть перемещена или удалена.
+            this.workersTableAdapter.Fill(this._DemidLR8_Class_ContractContextDataSet1.Workers);
+
+                db = new Context2();
+                db.Contractik.Load();
+
+                FileStream fs = new FileStream("Sample.txt", FileMode.Create);
+            StreamWriter streamWriter = new StreamWriter(fs);     
+            
+                for (int j = 0; j < dataGridView1.Rows.Count; j++)
+                {
+                    for (int i = 0; i < dataGridView1.Rows[j].Cells.Count; i++)
+                    {
+                        streamWriter.Write(dataGridView1.Rows[j].Cells[i].Value + ";");
+                    }
+
+                    streamWriter.WriteLine();
+                }
+
+                streamWriter.Close();
+                fs.Close();
+
+            
+
+            calc();
+        }
+
+        private void calc()
+        {
+            string path = @"C:\Users\Демид\Desktop\3курс 1семестр\Долг1Программирование\Best\bin\Debug\Sample.txt";
+
+            string[] readText = File.ReadAllLines(path);
+
+            int num = 0;
+            int sum = 0;
+            foreach (string s in readText)
+            {
+                if (s.Contains(comboBox1.Text))
+                {
+                    num++;
+                }
+            }
+            txbTS.Text = num.ToString();
+
+
+            //-----------------------------------------------------
+
+            int cmd2 = Convert.ToInt32(comboBox2.SelectedIndex) + 1;
+            int cmd3 = Convert.ToInt32(comboBox3.SelectedIndex) + 1;
+            
+            var ss1 = "f";
+            var ss = "m";
+
+            foreach (string s in readText)
+            {
+                
+                char[] separators = new char[] { ';' };
+                var wor = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                
+                if (Convert.ToInt32(wor[0]) == cmd2)
+                {
+                   ss = Convert.ToString(wor[7]);
+                  
+                }
+                
+                if (Convert.ToInt32(wor[0]) == cmd3)
+                {
+                    ss1 = Convert.ToString(wor[8]);
+                }
+                
+            }
+
+
+            var dat1 = DateTime.Parse(ss);
+            var dat2 = DateTime.Parse(ss1);
+            foreach (string s in readText)
+            {
+
+                char[] separators = new char[] { ';' };
+                var wor = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                var dat = DateTime.Parse(wor[8]);
+
+                if ((dat > dat1 && dat < dat2) || (dat == dat1) || (dat == dat2))
+                {
+                    sum = sum + Int32.Parse(wor[5]);
+                }
+            }
+
+            textBox1.Text = sum.ToString() + "р.";
+            sum = 0;
+        }
+
+
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            calc();
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            calc();
+           
+        }
+
+        private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            calc();
+        }
+    }
+}
