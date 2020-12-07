@@ -1,50 +1,118 @@
 namespace Best
 {
-    public partial class Form1 : Form
+    public partial class FWorker : Form
     {
-        public Form1()
+        Context db;
+        public FWorker()
         {
             InitializeComponent();
-        }
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Statistic st = new Statistic();
-            st.ShowDialog(this);
+           
+            db = new Context();
+            db.Workers.Load();
         }
 
-        private void btnWorker_Click(object sender, EventArgs e)
+        private void linkMenu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FWorker fWorker = new FWorker();
-            fWorker.ShowDialog();  
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
+            this.Close();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FWorker_Load(object sender, EventArgs e)
+        {
+                        this.workersTableAdapter.Fill(this._DemidLR8_Class_ContractContextDataSet.Workers);
+        }
+        private void bcAddWorker(object sender, EventArgs e)
+        {
+            
+            AddWorker addWorker = new AddWorker();
+            
+            addWorker.ShowDialog();
+            this.Close();
+        }
+        private void dataGridView13_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
+            int index = dataGridView13.SelectedRows[0].Index;
+            int id = 0;
+            bool converted = Int32.TryParse(dataGridView13[0, index].Value.ToString(), out id);
+            if (converted == false)
+                return;
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            AllContracts all = new AllContracts();
-            all.ShowDialog();
-        }
+                Workers worker = db.Workers.Find(id);
+                currentWorker currentWorker = new currentWorker();
+            
+
+                currentWorker.textBox1.Text = worker.Name;
+                currentWorker.textBox2.Text = worker.Position;
+                currentWorker.textBox3.Text = worker.Phone;
+                currentWorker.textBox4.Text = worker.Salary;
+                currentWorker.textBox5.Text = worker.Date;
+
+                DialogResult result = currentWorker.ShowDialog(this);
+
+                worker.Name = currentWorker.textBox1.Text;
+                worker.Position = currentWorker.textBox2.Text;
+                worker.Phone = currentWorker.textBox3.Text;
+                worker.Salary = currentWorker.textBox4.Text;
+                worker.Date = currentWorker.textBox5.Text;
+
+                db.SaveChanges();
+            dataGridView13.Refresh();
+            }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Clients client = new Clients();
-            client.ShowDialog();
-        }
+            if (dataGridView13.SelectedRows.Count > 0)
+            {
+                int index = dataGridView13.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(dataGridView13[0, index].Value.ToString(), out id);
+                if (converted == false)
+                    return;
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Payes pay = new Payes();
-            pay.ShowDialog();
-        }
+                Workers worker = db.Workers.Find(id);
+                currentWorker currentWorker = new currentWorker();
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Transport ts = new Transport();
-            ts.ShowDialog();
+
+                currentWorker.textBox1.Text = worker.Name;
+                currentWorker.textBox2.Text = worker.Position;
+                currentWorker.textBox3.Text = worker.Phone;
+                currentWorker.textBox4.Text = worker.Salary;
+                currentWorker.textBox5.Text = worker.Date;
+
+                DialogResult result = currentWorker.ShowDialog(this);
+
+                worker.Name = currentWorker.textBox1.Text;
+                worker.Position = currentWorker.textBox2.Text;
+                worker.Phone = currentWorker.textBox3.Text;
+                worker.Salary = currentWorker.textBox4.Text;
+                worker.Date = currentWorker.textBox5.Text;
+
+                
+
+                db.SaveChanges();
+                dataGridView13.Refresh();
+            }
         }
-    }
-}
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView13.SelectedRows.Count > 0)
+            {
+                int index = dataGridView13.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(dataGridView13[0, index].Value.ToString(), out id);
+                if (converted == false)
+                    return;
+
+                Workers worker = db.Workers.Find(id);
+                db.Workers.Remove(worker);
+                db.SaveChanges();
+                dataGridView13.Refresh();
+                MessageBox.Show("Удалено");
+            }
+        }
+        private void tbSearchWorker_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView13.DataSource = db.Workers.Where(x => x.Name.Contains(tbSearchWorker.Text)).ToList();
+        }
