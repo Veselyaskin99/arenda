@@ -1,0 +1,46 @@
+namespace Best
+{
+    public partial class currentWorker : Form
+    {
+        Context2 db1;
+       
+        public currentWorker()
+        {
+
+            db1 = new Context2();
+
+            db1.Contractik.Load();
+            InitializeComponent();
+            
+            
+        }
+
+        private void currentWorker_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "contract.Contractik". При необходимости она может быть перемещена или удалена.
+            this.contractikTableAdapter.Fill(this.contract.Contractik);
+            dataGridView1.DataSource = db1.Contractik.Where(x => x.Worker.Contains(textBox1.Text)).ToList();
+        }
+       
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dataGridView1.SelectedRows[0].Index;
+            int id = 0;
+            bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+
+
+            Contractik contract = db1.Contractik.Find(id);
+            ContractFull cf = new ContractFull();
+
+
+            cf.textBox1с.Text = contract.Client;
+            cf.textBox2с.Text = contract.Worker;
+            cf.textBox3с.Text = contract.TS;
+            cf.textBox4с.Text = contract.State_namber;
+            cf.textBox5с.Text = contract.Price.ToString();
+            cf.textBox6с.Text = contract.Date_Start.ToString();
+            cf.textBox7с.Text = contract.Date_End.ToString();
+            cf.button15.Hide();
+            cf.ShowDialog();
+            DialogResult result = cf.ShowDialog(this);
+        }
