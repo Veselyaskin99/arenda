@@ -1,3 +1,3 @@
 # Главное меню
 
-![](https://github.com/Veselyaskin99/arenda/issues/1)
+![](https://user-images.githubusercontent.com/74318083/101327940-5bc27b00-38aa-11eb-81fb-1aa85895f9dd.png)
