@@ -1,0 +1,50 @@
+namespace Best
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Statistic st = new Statistic();
+            st.ShowDialog(this);
+        }
+
+        private void btnWorker_Click(object sender, EventArgs e)
+        {
+            FWorker fWorker = new FWorker();
+            fWorker.ShowDialog();  
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AllContracts all = new AllContracts();
+            all.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Clients client = new Clients();
+            client.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Payes pay = new Payes();
+            pay.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Transport ts = new Transport();
+            ts.ShowDialog();
+        }
+    }
+}
