@@ -1,0 +1,11 @@
+namespace Best
+{
+    public partial class ContractFull : Form
+    {
+        Context2 db1;
+        public ContractFull()
+        {
+            db1 = new Context2();
+            db1.Contractik.Load();
+            InitializeComponent();
+        }
