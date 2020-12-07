@@ -1,0 +1,169 @@
+namespace Best
+{
+    public partial class Transport : Form
+    {
+        avtotransport db;
+        public Transport()
+        {
+            avtotransport avt = new avtotransport();
+            InitializeComponent();
+        }
+        string imgLocation = "";
+        private void Transport_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "avtik.avto". При необходимости она может быть перемещена или удалена.
+            this.avtoTableAdapter.Fill(this.avtik.avto);          
+        }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {       
+                byte[] img = (byte[])dataGridView1.CurrentRow.Cells[6].Value;
+                MemoryStream ms = new MemoryStream(img);
+                pictureBox1.Image = Image.FromStream(ms);           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddTS at = new AddTS();
+            at.ShowDialog();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+                int index = dataGridView1.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                if (converted == false)
+                    return;
+
+                avto mashina = db.avto.Find(id);
+                AddTS adts = new AddTS();
+                adts.ShowDialog();
+
+                adts.textBox1t.Text = mashina.model;
+                adts.textBox2t.Text = mashina.color;
+                adts.textBox3t.Text = mashina.complictation;
+                adts.textBox4t.Text = mashina.number;
+                adts.textBox5t.Text = mashina.price;
+                adts.textBox6t.Text = mashina.history;
+                byte[] img = (byte[])dataGridView1.CurrentRow.Cells[6].Value;
+                MemoryStream ms = new MemoryStream(img);
+                adts.pictureBox1t.Image = Image.FromStream(ms);
+
+                byte[] img1 = File.ReadAllBytes(imgLocation);
+
+                mashina.model = adts.textBox1t.Text;
+                mashina.color = adts.textBox3t.Text;
+                mashina.complictation = adts.textBox2t.Text;
+                mashina.number = adts.textBox4t.Text;
+                mashina.price = adts.textBox5t.Text;
+                mashina.history = adts.textBox6t.Text;
+                mashina.image = img1;
+
+                db.SaveChanges();
+                dataGridView1.Refresh();
+            }
+        
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            using (avtotransport avt = new avtotransport())
+            {
+                int index = dataGridView1.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                if (converted == false)
+                    return;
+
+                avto mashina = db.avto.Find(id);
+                AddTS adts = new AddTS();
+
+
+                adts.textBox1t.Text = mashina.model;
+                adts.textBox2t.Text = mashina.color;
+                adts.textBox3t.Text = mashina.complictation;
+                adts.textBox4t.Text = mashina.number;
+                adts.textBox5t.Text = mashina.price;
+                adts.textBox6t.Text = mashina.history;
+                byte[] img = (byte[])dataGridView1.CurrentRow.Cells[6].Value;
+                MemoryStream ms = new MemoryStream(img);
+                adts.pictureBox1t.Image = Image.FromStream(ms);
+
+
+                adts.ShowDialog(this);
+
+                byte[] img1 = File.ReadAllBytes(imgLocation);
+
+                mashina.model = adts.textBox1t.Text;
+                mashina.color = adts.textBox3t.Text;
+                mashina.complictation = adts.textBox2t.Text;
+                mashina.number = adts.textBox4t.Text;
+                mashina.price = adts.textBox5t.Text;
+                mashina.history = adts.textBox6t.Text;
+                mashina.image = img1;
+
+                db.SaveChanges();
+                dataGridView1.Refresh();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (avtotransport avt = new avtotransport())
+            {
+                int index = dataGridView1.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                if (converted == false)
+                    return;
+
+                avto mashina = db.avto.Find(id);
+                AddTS adts = new AddTS();
+                adts.ShowDialog(this);
+
+                adts.textBox1t.Text = mashina.model;
+                adts.textBox2t.Text = mashina.color;
+                adts.textBox3t.Text = mashina.complictation;
+                adts.textBox4t.Text = mashina.number;
+                adts.textBox5t.Text = mashina.price;
+                adts.textBox6t.Text = mashina.history;
+                byte[] img = (byte[])dataGridView1.CurrentRow.Cells[6].Value;
+                MemoryStream ms = new MemoryStream(img);
+                adts.pictureBox1t.Image = Image.FromStream(ms);
+
+
+                byte[] img1 = File.ReadAllBytes(imgLocation);
+
+                mashina.model = adts.textBox1t.Text;
+                mashina.color = adts.textBox3t.Text;
+                mashina.complictation = adts.textBox2t.Text;
+                mashina.number = adts.textBox4t.Text;
+                mashina.price = adts.textBox5t.Text;
+                mashina.history = adts.textBox6t.Text;
+                mashina.image = img1;
+
+                db.SaveChanges();
+                dataGridView1.Refresh();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int index = dataGridView1.SelectedRows[0].Index;
+                int id = 0;
+                bool converted = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                if (converted == false)
+                    return;
+
+                avto mas = db.avto.Find(id);
+                db.avto.Remove(mas);
+                db.SaveChanges();
+                dataGridView1
+                    .Refresh();
+                MessageBox.Show("Удалено");
+            }
+        }
+    }
+}
