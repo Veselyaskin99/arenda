@@ -15,12 +15,13 @@
 ![](https://user-images.githubusercontent.com/74318083/101329711-b52ba980-38ac-11eb-8c90-c2ad14e3b5b8.png)
 
 
+
 [Код формы "Сотрудники"](https://github.com/Veselyaskin99/arenda/blob/main/Workers)
 
 # Форма "Добавить сотрудника"
 ![](https://user-images.githubusercontent.com/74318083/101329720-b8269a00-38ac-11eb-8a2f-90c0da5626f2.png)
 ### Функционал:
--При нажатии на кнопку "Добавить" добавляет нового сотрудника в БД.
+- При нажатии на кнопку "Добавить" добавляет нового сотрудника в БД.
 
 
 
@@ -50,11 +51,11 @@
 # Форма "Добавить клиента"
 ![](https://user-images.githubusercontent.com/74318083/101335110-b6aca000-38b3-11eb-9b29-d4a964dd3b82.png)
 ### Функционал:
--При нажатии на кнопку "Добавить" добавляет нового клиента в БД.
+- При нажатии на кнопку "Добавить" добавляет нового клиента в БД.
 
 
 
-[Код формы "Добавить сотрудника"](https://github.com/Veselyaskin99/arenda/blob/main/Addclient)
+[Код формы "Добавить клиента"](https://github.com/Veselyaskin99/arenda/blob/main/Addclient)
 # Форма "Текущий клиент"
 ![](https://user-images.githubusercontent.com/74318083/101335151-c62be900-38b3-11eb-84b8-3cbd00bb0318.png)
 ### Функционал:
@@ -74,7 +75,7 @@
 ![](https://user-images.githubusercontent.com/74318083/101341424-08592880-38bc-11eb-80ff-f29e10ade875.png)
 
 
-[Код формы "Сотрудники"](https://github.com/Veselyaskin99/arenda/blob/main/Contracts)
+[Код формы "Договора"](https://github.com/Veselyaskin99/arenda/blob/main/Contracts)
 [Код формы "Добавить сотрудника"](https://github.com/Veselyaskin99/arenda/blob/main/Addclient)
 # Форма "Текущий договор"
 ![](https://user-images.githubusercontent.com/74318083/101341421-05f6ce80-38bc-11eb-96f0-15b65804c431.png)
