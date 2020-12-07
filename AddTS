@@ -1,0 +1,47 @@
+namespace Best
+{
+    public partial class AddTS : Form
+    {
+        public AddTS()
+        {
+            InitializeComponent();
+        }
+        string imgLocation = "";
+        SqlCommand cmd;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Image files(*.jpg;*.jpeg)|*.jpg;*jpeg", Multiselect = false })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    imgLocation = ofd.FileName.ToString();
+                    pictureBox1t.ImageLocation = imgLocation;
+                }
+            }
+                
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (avtotransport avt = new avtotransport()) {
+
+
+                Transport qw = new Transport();
+                byte[] img = File.ReadAllBytes(imgLocation);
+                avto avtm = new avto();
+                avtm.model = textBox1t.Text;
+                avtm.color = textBox3t.Text;
+                avtm.complictation = textBox2t.Text;
+                avtm.number = textBox4t.Text;
+                avtm.price = textBox5t.Text;
+                avtm.history = textBox6t.Text;
+                avtm.image = img;
+
+                avt.avto.Add(avtm);
+                avt.SaveChanges();
+                qw.dataGridView1.Refresh();
+                this.Close();
+
+            }
+        }
