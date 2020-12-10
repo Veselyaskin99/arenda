@@ -15,7 +15,7 @@
 
 ## Диаграмма интерфейсов
 
-![](https://github.com/Veselyaskin99/README/blob/main/7lr.png)
+![](https://user-images.githubusercontent.com/74318083/101732870-d8e32f80-3af8-11eb-98f7-3bb29485c485.png)
 
 ### Список всех интерфейсов:
 
