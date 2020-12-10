@@ -10,6 +10,10 @@ namespace Best
 
         private void Statistic_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "avtik.avto". При необходимости она может быть перемещена или удалена.
+            this.avtoTableAdapter.Fill(this.avtik.avto);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_DemidLR8_Class_ContractContextDataSet2.Clients". При необходимости она может быть перемещена или удалена.
+            this.clientsTableAdapter.Fill(this._DemidLR8_Class_ContractContextDataSet2.Clients);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "cNTR.Contractik". При необходимости она может быть перемещена или удалена.
             this.contractikTableAdapter.Fill(this.cNTR.Contractik);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_DemidLR8_Class_ContractContextDataSet1.Workers". При необходимости она может быть перемещена или удалена.
@@ -47,17 +51,8 @@ namespace Best
 
             int num = 0;
             int sum = 0;
-            foreach (string s in readText)
-            {
-                if (s.Contains(comboBox1.Text))
-                {
-                    num++;
-                }
-            }
-            txbTS.Text = num.ToString();
-
-
-            //-----------------------------------------------------
+           
+           
 
             int cmd2 = Convert.ToInt32(comboBox2.SelectedIndex) + 1;
             int cmd3 = Convert.ToInt32(comboBox3.SelectedIndex) + 1;
@@ -100,8 +95,68 @@ namespace Best
                 }
             }
 
+            textBox2.Text = (sum-(sum * 0.20)).ToString() + "р.";
+
             textBox1.Text = sum.ToString() + "р.";
             sum = 0;
+            //---------------------------------------
+            foreach (string s in readText)
+            {
+                char[] separators = new char[] { ';' };
+                var wor = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                var dat = DateTime.Parse(wor[8]);
+
+                if ((dat > dat1 && dat < dat2) || (dat == dat1) || (dat == dat2))
+                {
+                    if (s.Contains(comboBox1.Text))
+                    {
+                        num++;
+                    }
+                }
+            }
+            txbTS.Text = num.ToString();
+
+
+            //-----------------------------------------------------
+
+
+            int num2 = 0;
+
+            foreach (string s in readText)
+            {
+                char[] separators = new char[] { ';' };
+                var wor = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                var dat = DateTime.Parse(wor[8]);
+
+                if ((dat > dat1 && dat < dat2) || (dat == dat1) || (dat == dat2))
+                {
+                    if (s.Contains(comboBox4.Text))
+                    {
+                        num2++;
+                    }
+                }
+            }
+            textBox3.Text = num2.ToString();
+
+            //---------------------------------------
+            int num3 = 0;
+
+            foreach (string s in readText)
+            {
+                char[] separators = new char[] { ';' };
+                var wor = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                var dat = DateTime.Parse(wor[8]);
+
+                if ((dat > dat1 && dat < dat2) || (dat == dat1) || (dat == dat2))
+                {
+                    if (s.Contains(comboBox5.Text))
+                    {
+                        num3++;
+                    }
+                }
+            }
+            textBox4.Text = num3.ToString();
+
         }
 
 
@@ -118,6 +173,16 @@ namespace Best
         }
 
         private void comboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            calc();
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            calc();
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
             calc();
         }
