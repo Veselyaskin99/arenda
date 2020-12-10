@@ -31,7 +31,7 @@
 # Меню
 
 ![](https://user-images.githubusercontent.com/74318083/101327940-5bc27b00-38aa-11eb-81fb-1aa85895f9dd.png)
-[Код формы "Меню"](https://github.com/Veselyaskin99/arenda/blob/main/Workers)
+**[Код формы "Меню"](https://github.com/Veselyaskin99/arenda/blob/main/Workers)**
     
 # Форма "Сотрудники"
 ![](https://user-images.githubusercontent.com/74318083/101329685-a9d87e00-38ac-11eb-8a22-d3df0d493ea9.png)
@@ -151,7 +151,7 @@
 
 [Код формы "Добавить ТС"](https://github.com/Veselyaskin99/arenda/blob/main/AddTS)
 # Форма "Статистика"
-![](https://user-images.githubusercontent.com/74318083/101350722-6ab92580-38ca-11eb-82b1-96127d60753e.png)
+![](https://user-images.githubusercontent.com/74318083/101745470-2914be80-3b06-11eb-877b-a64e022de5e8.png)
 ### Функционал:
 - Позволяет посмотреть количество сданных в аренду автомобилей менеджером;
 - Позволяет посмотреть количество вырученных денег за определенный промежуток времени.
