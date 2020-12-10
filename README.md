@@ -46,7 +46,7 @@
 
 
 
-[Код формы "Сотрудники"](https://github.com/Veselyaskin99/arenda/blob/main/Workers)
+**[Код формы "Сотрудники"](https://github.com/Veselyaskin99/arenda/blob/main/Workers)**
 
 # Форма "Добавить сотрудника"
 ![](https://user-images.githubusercontent.com/74318083/101329720-b8269a00-38ac-11eb-8a2f-90c0da5626f2.png)
@@ -55,7 +55,7 @@
 
 
 
-[Код формы "Добавить сотрудника"](https://github.com/Veselyaskin99/arenda/blob/main/AddWorker)
+**[Код формы "Добавить сотрудника"](https://github.com/Veselyaskin99/arenda/blob/main/AddWorker)**
 
 # Форма "Текущий сотрудник"
 ![](https://user-images.githubusercontent.com/74318083/101329699-b1982280-38ac-11eb-8678-39d0d4a3c2ac.png)
@@ -65,7 +65,7 @@
 
 
 
-[Код формы "Текущий сотрудник"](https://github.com/Veselyaskin99/arenda/blob/main/currentWorker)
+**[Код формы "Текущий сотрудник"](https://github.com/Veselyaskin99/arenda/blob/main/currentWorker)**
 
 # Форма "Клиенты"
 ![](https://user-images.githubusercontent.com/74318083/101335143-c2986200-38b3-11eb-9563-db4340475d32.png)
@@ -77,7 +77,7 @@
 
 
 
-[Код формы "Клиенты"](https://github.com/Veselyaskin99/arenda/blob/main/Clients)
+**[Код формы "Клиенты"](https://github.com/Veselyaskin99/arenda/blob/main/Clients)**
 # Форма "Добавить клиента"
 ![](https://user-images.githubusercontent.com/74318083/101335110-b6aca000-38b3-11eb-9b29-d4a964dd3b82.png)
 ### Функционал:
@@ -85,7 +85,7 @@
 
 
 
-[Код формы "Добавить клиента"](https://github.com/Veselyaskin99/arenda/blob/main/Addclient)
+**[Код формы "Добавить клиента"](https://github.com/Veselyaskin99/arenda/blob/main/Addclient)**
 # Форма "Текущий клиент"
 ![](https://user-images.githubusercontent.com/74318083/101335151-c62be900-38b3-11eb-84b8-3cbd00bb0318.png)
 ### Функционал:
@@ -128,7 +128,7 @@
 ![](https://user-images.githubusercontent.com/74318083/101344132-fb3e3880-38bf-11eb-9810-15fe36aba6e6.png)
 
 
-[Код формы "Платежи"](https://github.com/Veselyaskin99/arenda/blob/main/Payes)
+**[Код формы "Платежи"](https://github.com/Veselyaskin99/arenda/blob/main/Payes)**
 # Форма "Автомобили"
 ![](https://user-images.githubusercontent.com/74318083/101348459-9f2ae280-38c6-11eb-8641-c641bfa438fc.png)
 ### Функционал:
@@ -149,7 +149,7 @@
 
 
 
-[Код формы "Добавить ТС"](https://github.com/Veselyaskin99/arenda/blob/main/AddTS)
+**[Код формы "Добавить ТС"](https://github.com/Veselyaskin99/arenda/blob/main/AddTS)**
 # Форма "Статистика"
 ![](https://user-images.githubusercontent.com/74318083/101745470-2914be80-3b06-11eb-877b-a64e022de5e8.png)
 ### Функционал:
@@ -158,4 +158,4 @@
 
 
 
-[Код формы "Статистика](https://github.com/Veselyaskin99/arenda/blob/main/Statistic)
+**[Код формы "Статистика](https://github.com/Veselyaskin99/arenda/blob/main/Statistic)**
