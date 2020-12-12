@@ -1,6 +1,19 @@
 # Аренда автотранспорта в прокат
 
 Цель программы – повышение качества процесса аренды ТС, повышение эффективности работы сотрудников
+
+## Диаграмма интерфейсов
+![](https://user-images.githubusercontent.com/74318083/101993439-b9fdbc80-3cf5-11eb-9746-708606c8c9d7.png)
+![](https://user-images.githubusercontent.com/74318083/101732870-d8e32f80-3af8-11eb-98f7-3bb29485c485.png)
+
+### Список всех интерфейсов:
+
+
+- **[IClient](https://github.com/Veselyaskin99/README/blob/main/IClient.md)**<br>
+- **[IWorker](https://github.com/Veselyaskin99/README/blob/main/IWorker.md)**<br>
+- **[IContract](https://github.com/Veselyaskin99/README/blob/main/IContract.md)**<br>
+- **[IPay](https://github.com/Veselyaskin99/README/blob/main/IPay.md)**<br>
+- **[ITS](https://github.com/Veselyaskin99/README/blob/main/ITS.md)**
 ## Диаграмма размещений 
 
 ![](https://github.com/Veselyaskin99/README/blob/main/1f.png)
@@ -13,18 +26,7 @@
 
 На данной диаграмме изображены все компоненты: клиентское приложение, Работники, клиенты, платежи, контракты и автомобили. Эти компоненты взаимодействуют друг с другом с помощью интерфейсов. 
 
-## Диаграмма интерфейсов
 
-![](https://user-images.githubusercontent.com/74318083/101732870-d8e32f80-3af8-11eb-98f7-3bb29485c485.png)
-
-### Список всех интерфейсов:
-
-
-- **[IClient](https://github.com/Veselyaskin99/README/blob/main/IClient.md)**<br>
-- **[IWorker](https://github.com/Veselyaskin99/README/blob/main/IWorker.md)**<br>
-- **[IContract](https://github.com/Veselyaskin99/README/blob/main/IContract.md)**<br>
-- **[IPay](https://github.com/Veselyaskin99/README/blob/main/IPay.md)**<br>
-- **[ITS](https://github.com/Veselyaskin99/README/blob/main/ITS.md)**
 
 
 
