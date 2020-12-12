@@ -4,7 +4,7 @@
 
 ## Схема интерфейсов
 ![](https://user-images.githubusercontent.com/74318083/101993524-53c56980-3cf6-11eb-8539-237862cf5e29.png)
-![](https://user-images.githubusercontent.com/74318083/101732870-d8e32f80-3af8-11eb-98f7-3bb29485c485.png)
+![](https://user-images.githubusercontent.com/74318083/101993620-f54cbb00-3cf6-11eb-84a2-2c14045a61ca.png)
 
 ### Список всех интерфейсов:
 
