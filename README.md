@@ -20,7 +20,7 @@
 ### Диаграммы:
 - **[Диаграмма размещений](https://github.com/Veselyaskin99/arenda/blob/main/dram1.md)**<br>
 - **[Диаграммы последовательностей](https://github.com/Veselyaskin99/arenda/commit/0f3d873190c1331b4318c88cae416f7321f45e41)**<br>
-- **[Диаграммы действий](https://github.com/Veselyaskin99/arenda/commit/0f3d873190c1331b4318c88cae416f7321f45e41)**<br>
+- **[Диаграммы действий](https://github.com/Veselyaskin99/arenda/blob/main/ddeystv.md)**<br>
 
 
 ## Диаграмма компонентов
