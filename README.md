@@ -24,16 +24,7 @@
 - **[Диаграмма состояния](https://github.com/Veselyaskin99/arenda/blob/main/dsost.md)**<br>
 - **[Диаграмма классов](https://github.com/Veselyaskin99/arenda/blob/main/dclass.md)**<br>
 - **[Схема БД](https://github.com/Veselyaskin99/arenda/blob/main/SHBD.md)**<br>
-- **[Схема прецедентов](https://github.com/Veselyaskin99/arenda/blob/main/SHBD.md)**<br>
-
-
-## Диаграмма компонентов
-
-![](https://github.com/Veselyaskin99/README/blob/main/1.png)
-
-На данной диаграмме изображены все компоненты: клиентское приложение, Работники, клиенты, платежи, контракты и автомобили. Эти компоненты взаимодействуют друг с другом с помощью интерфейсов. 
-
-
+- **[Схема прецедентов](https://github.com/Veselyaskin99/arenda/blob/main/SHPREC.md)**<br>
 
 
 
