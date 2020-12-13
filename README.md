@@ -6,7 +6,7 @@
 ![](https://user-images.githubusercontent.com/74318083/101993524-53c56980-3cf6-11eb-8539-237862cf5e29.png)
 ![](https://user-images.githubusercontent.com/74318083/101993620-f54cbb00-3cf6-11eb-84a2-2c14045a61ca.png)
 
-### Список всех интерфейсов:
+### Список интерфейсов:
 
 
 - **[IClient](https://github.com/Veselyaskin99/README/blob/main/IClient.md)**<br>
@@ -14,11 +14,14 @@
 - **[IContract](https://github.com/Veselyaskin99/README/blob/main/IContract.md)**<br>
 - **[IPay](https://github.com/Veselyaskin99/README/blob/main/IPay.md)**<br>
 - **[ITS](https://github.com/Veselyaskin99/README/blob/main/ITS.md)**
-## Диаграмма размещений 
 
-![](https://github.com/Veselyaskin99/README/blob/main/1f.png)
 
-На диаграмме размещения изображены узлы выполнения программных компонентов, а также объектов. Показано, что приложение, установленное на компьютере пользователя взаимодействует с сервером, который содержит в себе базу данных.
+
+### Диаграммы:
+- **[Диаграмма размещений](https://github.com/Veselyaskin99/arenda/blob/main/dram1.md)**<br>
+- **[Диаграммы последовательностей](https://github.com/Veselyaskin99/arenda/commit/0f3d873190c1331b4318c88cae416f7321f45e41)**<br>
+- **[Диаграммы действий](https://github.com/Veselyaskin99/arenda/commit/0f3d873190c1331b4318c88cae416f7321f45e41)**<br>
+
 
 ## Диаграмма компонентов
 
