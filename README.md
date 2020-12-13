@@ -21,6 +21,10 @@
 - **[Диаграмма размещений](https://github.com/Veselyaskin99/arenda/blob/main/dram1.md)**<br>
 - **[Диаграммы последовательностей](https://github.com/Veselyaskin99/arenda/commit/0f3d873190c1331b4318c88cae416f7321f45e41)**<br>
 - **[Диаграммы действий](https://github.com/Veselyaskin99/arenda/blob/main/ddeystv.md)**<br>
+- **[Диаграмма состояния](https://github.com/Veselyaskin99/arenda/blob/main/dsost.md)**<br>
+- **[Диаграмма классов](https://github.com/Veselyaskin99/arenda/blob/main/dclass.md)**<br>
+- **[Схема БД](https://github.com/Veselyaskin99/arenda/blob/main/SHBD.md)**<br>
+- **[Схема прецедентов](https://github.com/Veselyaskin99/arenda/blob/main/SHBD.md)**<br>
 
 
 ## Диаграмма компонентов
